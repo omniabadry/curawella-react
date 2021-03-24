@@ -1,0 +1,180 @@
+import React from 'react'
+import { makeStyles} from "@material-ui/core/styles";
+import Input from "@material-ui/core/Input";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(2),
+    minWidth: 300,
+    maxWidth: 400,
+    // color: "#00c3ec"
+  },
+  chips: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+  chip: {
+    margin: 2,
+  },
+  noLabel: {
+    marginTop: theme.spacing(3),
+  },
+}));
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+
+    },
+  },
+};
+
+
+
+export const SearchPart = () => {
+  const City = [
+    "All",
+    "Alexandria",
+    "Cairo",
+    "Aswan",
+    "Asyut",
+    "Sohag",
+    "Qena",
+    "Sinai",
+    "kafr Elsheikh",
+    "New Villag",
+    "Matrouh",
+    "Red Sea",
+    "Suez",
+    "Minya",
+    "Faiyoum",
+    "Monufia",
+    "Qalyobia",
+    "Dakahlia",
+    "Sharkia",
+    "Gharbia",
+    "Port Said",
+    "Beni Suif",
+    "Behira",
+    "Luxor",
+    "Ismailia",
+    "Almansora",
+  ];
+
+  const Speciality = [
+    "All",
+    "Urologist & Nephologist",
+    "Texologist",
+    "Physiotherapist",
+    "Dermatologist",
+    "Orthopedist",
+    "Oncologist",
+    "Cardiologist",
+    "Ophthalmologist",
+    "Internist & Parasitologist",
+    "Nutritionist",
+    "Pulmonologist",
+    "Intensivist",
+    "Psychiatrist",
+    "Neurologist",
+    "Veterinarine",
+    "Gynecologist & Obstetrician",
+    "Otolaryngologist",
+    "Surgery",
+    "Gastroenterologist & Heptalogist",
+    "General Doctor ",
+    "Dentistry",
+    "Radiology",
+    "Andrologist",
+    "Allergist",
+  ];
+
+  const classes = useStyles();
+  const [CityName, setCityName] = React.useState([]);
+  const [personName, setPersonName] = React.useState([]);
+
+
+  const handleChange = (event) => {
+    setCityName(event.target.value);
+  };
+   const handleChangeSpeciality = (event) => {
+     setPersonName(event.target.value);
+   };
+
+  return (
+    <div className="container-fluid" id="DivSearch">
+      <div className="row">
+        <div className="col-3">
+          <FormControl className={classes.formControl} id="form">
+            <InputLabel id="demo-mutiple-name-label">
+              Select a speciality
+            </InputLabel>
+            <Select
+              labelId="demo-mutiple-name-label"
+              id="demo-mutiple-name"
+              // multiple
+              value={personName}
+              onChange={handleChangeSpeciality}
+              input={<Input />}
+              MenuProps={MenuProps}
+              // style={{ borderBottom: "rgb(107, 104, 104) 2px solid" }}
+            >
+              {Speciality.map((name) => (
+                <MenuItem
+                  key={name}
+                  value={name}
+                  // style={getStyles(name, personName, theme)}
+                >
+                  {name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+        <div className="col-3">
+          <FormControl className={classes.formControl}>
+            <InputLabel id="demo-mutiple-name-label">Select a city </InputLabel>
+            <Select
+              labelId="demo-mutiple-name-label"
+              id="demo-mutiple-name"
+              // multiple
+              value={CityName}
+              onChange={handleChange}
+              input={<Input />}
+              MenuProps={MenuProps}
+            >
+              {City.map((name) => (
+                <MenuItem
+                  key={name}
+                  value={name}
+                  // style={getStyles(name, personName, theme)}
+                >
+                  {name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
+        <div className="col-5">
+          <input
+            className="form-control"
+            id="myInput"
+            type="text"
+            placeholder="Search by doctor name"
+          />
+        </div>
+        <div className="col-1">
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+    </div>
+  );
+};

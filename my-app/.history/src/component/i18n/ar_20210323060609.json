@@ -1,0 +1,32 @@
+{
+    "translation": {
+
+        "Sign up": "اشتراك",
+        "Contact US": "تواصل معنا",
+        "Language": "اللغة",
+        "Search": "ابحث",
+        "Sign in": "تسجيل الدخول",
+        "Doctors": "الاطباء",
+        "Home": "الرئيسيه",
+        "Search by doctor name": "ابحث عن الاطباء",
+        "Min LE": "الحد الادني",
+        "Max LE": "الحد الاقصي",
+        "Apply price range": "تحديد السعر",
+        "Follow us": "تابعنا",
+        "Explore": "استكشف",
+        "What we do?": "ماذا نفعل؟",
+        "Our Partners": "شركائنا",
+        "Download our apps": "حمل تطبيقاتنا",
+        "All": "الكل",
+        "General Practitioner": "ممارس عام",
+        "Specialist": "أخصائي",
+        "Assistant Lecture": "محاضر مساعد",
+        "Consultant": "استشاري",
+        "Lecturer": "محاضر",
+        "Assistant professor": "أستاذ مساعد",
+        "Professor": "أستاذ"
+
+
+
+    }
+}
